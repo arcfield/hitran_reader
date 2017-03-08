@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
+// Constansts
 #define prs 950.0
 #define dp 100.0
 #define gra 9.81
@@ -10,6 +11,7 @@
 #define avo 6.022140e23
 #define pi 4*atan(1.0)
 
+// arange routine
 long double *arange(long double start, long double end, long double step)
 {
    // 'arange' routine.
@@ -25,6 +27,7 @@ long double *arange(long double start, long double end, long double step)
    return output;
 }
 
+// main function
 int main()
 {
    long double nu_ini = 100.0, nu_end = 2000.0, nu_step = 1.0e-3;
@@ -61,7 +64,6 @@ int main()
    while(fgets(string, 320, fp))
    {
       sscanf(string, "%2d %12Lf %10Le %10Le %5Lf %5Lf %10Lf %4Lf %8Lf", &ID, &nu[i], &inten[i], &A, &gam_air[i], &gam_self, &E_pprime, &n_air[i], &del_air[i]);
-
       i++;
    }
 
@@ -95,6 +97,8 @@ int main()
    }
 
 //   printf("\n%Le, %Le\n", f[0], f[1899999]);
+   
+   // Release memory
    free(nu);
    free(inten);
    free(gam_air);
