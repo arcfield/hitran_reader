@@ -1,2 +1,1 @@
-# hitran_reader
-# hitran_reader
+Project of HITRAN file reader...
